@@ -1,2 +1,6 @@
 # Classic-machine-learning-algorithm
-some classic machine learning algorithm implement with matlab&amp;sklearn
+some classic machine learning algorithm implement with matlab&sklearn
+
+These algorithms include
+- [x] K-means
+- [] SVM
