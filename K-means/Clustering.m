@@ -2,7 +2,7 @@ clc;
 clear all;
 
 %% 定义算法超参数
-num_iteration = 200; % 算法迭代次数
+max_iteration = 200; % 算法迭代次数
 num_cluster = 5; % 蔟的数量 
 min_sparse_degree = 0.5; % 蔟的最小稀疏程度
 max_spares_degree = 5; % 蔟的最大稀疏程度
@@ -10,6 +10,7 @@ min_num_point = 50; % 每个蔟群最小的点数量
 max_num_point = 150; % 每个蔟群最大的点数量
 min_number = 5; % 最小值
 max_number = 35; % 最大值
+threshold = 1e-4; % 迭代停止条件
 
 num_points = zeros(num_cluster, 1);
 for i = 1:num_cluster
@@ -74,7 +75,8 @@ xlabel('x');
 ylabel('y');
 
 %% 开始迭代优化
-for i = 1:num_iteration
+for i = 1:max_iteration
+    old_centroid = centroid;
     centroid = K_means_getcentroid(data, pred_label, num_cluster);
     pred_label = K_means_assignment(data, centroid, num_cluster);
     
@@ -88,4 +90,10 @@ for i = 1:num_iteration
     scatter(data(:,1), data(:,2), 30, pred_label);
     scatter(centroid(:,1), centroid(:,2), 200, 'rx', 'LineWidth',2.5);
     legend(sprintf('iteration:%d', i));
+    
+    % 得到新的质心之后首先应当判断一下结果有没有收敛，如果算法已经收敛，则应该终止后续无意义的循环
+    if sum(abs(centroid - old_centroid) >= threshold) == 0
+        disp('算法收敛');
+        break;
+    end
 end
