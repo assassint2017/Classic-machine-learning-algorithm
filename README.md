@@ -7,6 +7,7 @@ These algorithms include
 - [X] PCA
 - [ ] Decision tree
 - [ ] Random forest
+- [ ] AdaBoost
 
 **Clustering data using kmeans**
 <div align=center><img src="https://github.com/assassint2017/Classic-machine-learning-algorithm/blob/master/img/K-means.PNG"alt="K-means"/></div>
