@@ -70,7 +70,7 @@ scatter(data(:,1), data(:,2), 30, pred_label);
 scatter(centroid(:,1), centroid(:,2), 200, 'rx', 'LineWidth',2.5);
 
 colorbar();
-title('金标准');
+title('聚类结果');
 xlabel('x');
 ylabel('y');
 

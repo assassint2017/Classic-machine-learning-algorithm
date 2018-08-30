@@ -1,28 +1,25 @@
-% 获取一批线性可分数据的脚本
-% 可以将两个中心点的距离设置的相对近一些，这样数据会变成线性不可分的，但是依然可以使用带有
-% 软间隔的线性SVM进行分类
-
 clear all;
 clc;
 
-%% 获取一批线性可分的数据
-center_1 = [3, 4];
-center_2 = [5, 6];
+%% 获取一批线性不可分的数据
+center = [3, 4];
 num_point = [130, 150];
-sparse_degree = [0.7, 1.0];
+round = 2;
+ring = [2, 3.5];
 
-data_1 = get_gauss_data(center_1(1), center_1(2), sparse_degree(1), num_point(1));
-label_1 = zeros(size(data_1, 1), 1);
-data_2 = get_gauss_data(center_2(1), center_2(2), sparse_degree(2), num_point(2));
-label_2 = ones(size(data_2, 1), 1);
+round_data = get_round_data(center(1), center(2), round, num_point(1));
+label_round = zeros(size(round_data, 1), 1);
+ring_data = get_ring_data(center(1), center(2), ring(2), ring(1), num_point(2));
+label_ring = ones(size(ring_data, 1), 1);
 
 hold on;
-scatter(data_1(:, 1), data_1(:, 2), 'r^');
-scatter(data_2(:, 1), data_2(:, 2), 'bx');
-title('SVM线性分类展示');
+scatter(round_data(:, 1), round_data(:, 2), 'r^');
+scatter(ring_data(:, 1), ring_data(:, 2), 'bx');
+title('SVM非线性分类展示');
 
-data = cat(1, data_1, data_2);
-label = cat(1, label_1, label_2);
+
+data = cat(1, round_data, ring_data);
+label = cat(1, label_round, label_ring);
 
 random_index = randperm(size(data, 1))';
 
@@ -36,12 +33,12 @@ scatter(test_data(:, 1), test_data(:, 2), 80, 'ko');
 
 %% 训练C-SVC模型
 start = cputime;
-model = svmtrain(train_label, train_data, '-c 1 -t 0');  %训练模型，使用线性核函数
+model = svmtrain(train_label, train_data, '-c 1 -g 0.07');  %训练模型，使用高斯核函数
 [predict_label, accuracy, dec_values] = svmpredict(test_label, test_data, model);  %用模型预测
 fprintf('training time:%.3f\n', cputime - start);
 
 %% 结果绘图展示
-num_grid = 100;
+num_grid = 300;
 total_data = cat(1, test_data, train_data);
 min_x = min(total_data(:, 1));
 max_x = max(total_data(:, 1));
