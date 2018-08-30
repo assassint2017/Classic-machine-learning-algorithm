@@ -21,7 +21,7 @@ These algorithms include
 <div align=center><img width="350" height="350" src="https://github.com/assassint2017/Classic-machine-learning-algorithm/blob/master/img/Dimensionality%20reduction/PCA2D.png"alt="PCA"/></div>
 
 **using PCA reduce MNIST test data to 2D**
-<div align=center><img width="350" height="350" src="https://github.com/assassint2017/Classic-machine-learning-algorithm/blob/master/img/PCA2D.png"alt="PCA"/></div>
+<div align=center><img width="350" height="350" src="https://github.com/assassint2017/Classic-machine-learning-algorithm/blob/master/img/Dimensionality%20reduction/PCA2D.png"alt="PCA"/></div>
 
 ## SVM
 **linear classification using SVM**
