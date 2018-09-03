@@ -5,7 +5,7 @@ These algorithms include
 - [x] K-means
 - [X] SVM
 - [X] PCA
-- [ ] Decision tree
+- [X] Decision tree
 - [ ] Random forest
 - [ ] AdaBoost
 
@@ -36,6 +36,9 @@ These algorithms include
 **nonlinear regression using SVM**
 <div align=center><img width="350" height="350" src="https://github.com/assassint2017/Classic-machine-learning-algorithm/blob/master/matlab_code/img/SVM/nonlinear_regression.jpg"alt="SVM"/></div>
 
+## Decision tree
+**DT classification**
+<div align=center><img width="500" height="500" src="https://github.com/assassint2017/Classic-machine-learning-algorithm/blob/master/python_code/img/tree.png"alt="DT"/></div>
 
 
 
