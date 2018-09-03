@@ -40,4 +40,5 @@ plt.show()
 clf = svm.SVC(gamma=9e-4)
 clf.fit(train_data, train_label)
 pred_label = clf.predict(test_data)
-print('test acc:{:.3f}%'.format(sum(pred_label == test_label) / test_label.shape[0]) * 100)
+print('test acc:{:.3f}%'.format(sum(pred_label == test_label) / test_label.shape[0] * 100))
+
