@@ -38,7 +38,7 @@ These algorithms include
 
 ## Decision tree
 **DT classification**
-<div align=center><img width="500" height="500" src="https://github.com/assassint2017/Classic-machine-learning-algorithm/blob/master/python_code/img/tree.png"alt="DT"/></div>
+<div align=center><img width="700" height="700" src="https://github.com/assassint2017/Classic-machine-learning-algorithm/blob/master/python_code/img/tree.png"alt="DT"/></div>
 
 
 
