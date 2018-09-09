@@ -1,13 +1,17 @@
 # Classic-machine-learning-algorithm
-some classic machine learning algorithm implement with matlab&sklearn
+some classic machine learning algorithm implement with matlab&python(SKlearn,LightGBM,XGBoost)
 
 These algorithms include
 - [x] K-means
 - [X] SVM
 - [X] PCA
 - [X] Decision tree
-- [ ] Random forest
-- [ ] AdaBoost
+- [X] Random forest
+- [X] AdaBoost
+- [X] GBDT
+- [ ] LightGBM
+- [ ] XGBoost
+
 
 ## Clustering
 **Clustering data using kmeans**
