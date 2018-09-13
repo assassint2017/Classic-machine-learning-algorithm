@@ -3,6 +3,7 @@ some classic machine learning algorithm implement with matlab&python(SKlearn,Lig
 
 These algorithms include
 - [x] K-means
+- [x] LVQ
 - [X] SVM
 - [X] PCA
 - [X] Decision tree
