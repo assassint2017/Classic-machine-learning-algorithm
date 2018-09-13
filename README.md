@@ -9,8 +9,8 @@ These algorithms include
 - [X] Random forest
 - [X] AdaBoost
 - [X] GBDT
+- [X] XGBoost
 - [ ] LightGBM
-- [ ] XGBoost
 
 
 ## Clustering
